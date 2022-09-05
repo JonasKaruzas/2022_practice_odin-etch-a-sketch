@@ -36,6 +36,10 @@ const createBoard = (size, clickHandler) => {
   gameBoard.append(container);
 };
 
+resetBtn.addEventListener("click", () => {
+  updateBoardSize();
+});
+
 gameSize.addEventListener("input", () => {
   updateBoardSize();
 });
