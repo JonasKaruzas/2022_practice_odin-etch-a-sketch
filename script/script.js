@@ -4,6 +4,9 @@ const eraserBtn = document.querySelector("#eraserBtn");
 const resetBtn = document.querySelector("#resetBtn");
 const gameSize = document.querySelector("#size");
 const gameBoard = document.querySelector(".gameBoard");
+const colorToggle = document.querySelector("#colorToggle");
+
+let colorEraserToggle = colorToggle.checked;
 
 const updateBoardSize = () => {
   const sizeValue = document.querySelector("#sizeValue");
@@ -13,8 +16,14 @@ const updateBoardSize = () => {
 };
 
 const drawBox = (e) => {
-  if (e.buttons != 0) {
+  if (e.buttons == 0) {
+    return;
+  }
+
+  if (colorEraserToggle) {
     e.target.style.backgroundColor = colorValue.value;
+  } else {
+    e.target.style.backgroundColor = "#FFFFFF";
   }
 };
 
@@ -42,6 +51,10 @@ resetBtn.addEventListener("click", () => {
 
 gameSize.addEventListener("input", () => {
   updateBoardSize();
+});
+
+colorToggle.addEventListener("change", (e) => {
+  colorEraserToggle = e.target.checked;
 });
 
 updateBoardSize();
