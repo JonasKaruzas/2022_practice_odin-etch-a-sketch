@@ -1,5 +1,6 @@
 const gameBoard = document.querySelector(".gameBoard");
 const gameSize = document.querySelector("#size");
+const colorValue = document.querySelector("#color");
 
 gameSize.addEventListener("input", () => {
   const sizeValue = document.querySelector("#sizeValue");
@@ -10,7 +11,7 @@ gameSize.addEventListener("input", () => {
 
 const drawBox = (e) => {
   if (e.buttons == 1) {
-    e.target.style.backgroundColor = "red";
+    e.target.style.backgroundColor = colorValue.value;
   }
 };
 
