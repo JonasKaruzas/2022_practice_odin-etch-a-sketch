@@ -1,16 +1,19 @@
-const gameBoard = document.querySelector(".gameBoard");
-const gameSize = document.querySelector("#size");
 const colorValue = document.querySelector("#color");
+const brushBtn = document.querySelector("#brushBtn");
+const eraserBtn = document.querySelector("#eraserBtn");
+const resetBtn = document.querySelector("#resetBtn");
+const gameSize = document.querySelector("#size");
+const gameBoard = document.querySelector(".gameBoard");
 
-gameSize.addEventListener("input", () => {
+const updateBoardSize = () => {
   const sizeValue = document.querySelector("#sizeValue");
   sizeValue.innerText = `${gameSize.value} x ${gameSize.value}`;
   gameBoard.innerHTML = null;
   createBoard(gameSize.value, drawBox);
-});
+};
 
 const drawBox = (e) => {
-  if (e.buttons == 1) {
+  if (e.buttons != 0) {
     e.target.style.backgroundColor = colorValue.value;
   }
 };
@@ -30,8 +33,11 @@ const createBoard = (size, clickHandler) => {
     }
     container.append(row);
   }
-
   gameBoard.append(container);
 };
 
-createBoard(5, drawBox);
+gameSize.addEventListener("input", () => {
+  updateBoardSize();
+});
+
+updateBoardSize();
