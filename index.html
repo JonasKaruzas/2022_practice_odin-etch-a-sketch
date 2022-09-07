@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./style/style.css" />
     <script src="./script/script.js" defer></script>
     <title>Etch-A-Sketch</title>
@@ -12,8 +13,10 @@
     <div class="wrapper">
       <h1>Etch-A-Sketch</h1>
       <div class="controlPanel">
-        <p>Choose your colour</p>
-        <input type="color" name="color" id="color" />
+        <div class="color-container">
+          <p>Color</p>
+          <input type="color" name="color" id="color" />
+        </div>
         <div class="switch-container">
           <div class="switch-label">Eraser</div>
           <label class="switch">
@@ -22,10 +25,19 @@
           </label>
           <div class="switch-label">Brush</div>
         </div>
+        <div class="boardSize-container">
+          <p>Board size</p>
+          <div id="sizeValue">20 x 20</div>
+          <input
+            type="range"
+            name="size"
+            id="size"
+            min="4"
+            max="64"
+            value="20"
+          />
+        </div>
         <button id="resetBtn">Reset</button>
-        <p>Board size</p>
-        <div id="sizeValue">4 x 4</div>
-        <input type="range" name="size" id="size" min="4" max="64" value="20" />
       </div>
       <div class="gameBoard"></div>
     </div>

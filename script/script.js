@@ -19,7 +19,7 @@ const drawBox = (e) => {
   if (colorEraserToggle) {
     e.target.style.backgroundColor = colorValue.value;
   } else {
-    e.target.style.backgroundColor = "#FFFFFF";
+    e.target.style.backgroundColor = "darkgrey";
   }
 };
 
