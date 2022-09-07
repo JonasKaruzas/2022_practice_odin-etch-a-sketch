@@ -16,10 +16,6 @@ const updateBoardSize = () => {
 };
 
 const drawBox = (e) => {
-  if (e.buttons == 0) {
-    return;
-  }
-
   if (colorEraserToggle) {
     e.target.style.backgroundColor = colorValue.value;
   } else {
@@ -37,7 +33,7 @@ const createBoard = (size, clickHandler) => {
     for (let j = 0; j < size; j++) {
       const cell = document.createElement("div");
       cell.classList.add("cell");
-      cell.addEventListener("mousemove", clickHandler);
+      cell.addEventListener("mouseover", clickHandler);
       row.append(cell);
     }
     container.append(row);
