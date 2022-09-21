@@ -6,7 +6,7 @@ Live version of the game is [here](https://jonaskaruzas.github.io/2022_practice_
 
 ## Preview
 
-![Etch-a-Sketch](https://jonaskaruzas.github.io/2022_practice_odin-etch-a-sketch/img/demo_pic.jpg "Etch-a-Sketch")
+![Etch-a-Sketch](https://jonaskaruzas.github.io/2022_practice_odin-etch-a-sketch/img/demo_pic.png "Etch-a-Sketch")
 
 ## Technologies
 
